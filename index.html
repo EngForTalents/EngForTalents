@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="sweetalert2.min.js"></script>
+    <link rel="stylesheet" href="sweetalert2.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>EngForTalent</title>
+</head>
+
+<body>
+    <div class="container">
+
+        <form action="https://sheetdb.io/api/v1/dyuk3fqi1jn0e" method="POST" id="sheetdb-form">
+            <h1 class="title">
+                u're Talent
+            </h1>
+            <div class="content">
+                <div class="personal"></div>
+
+                    <input type="text" name="FullName" id="fullname" placeholder="FullName" >
+                    <input type="text" name="UserName" id="username" placeholder="UserName" >
+                    <input type="email" name="EmailAddress" id="email" placeholder="Email Address" >
+                    <input type="text" name="WhatsAppNumber" id="number" placeholder="WhatsApp Number" >
+                    <input type="url" name="FacebookAccount" id="fb" placeholder="Facebook Account URL" >
+
+                    <select id="Ptalent" name="Primary-Talent" class="show">
+                        <option value="" disabled selected hidden>Choose your primary talent</option>
+                        <option value="التمثيل">التمثيل</option>
+                        <option value="الغناء">الغناء</option>
+                        <option value="الرقص">الرقص</option>
+                        <option value="التأليف">التأليف</option>
+                        <option value="القاء الشعر">القاء الشعر</option>
+                        <option value="التصوير">التصوير</option>
+                        <option value="الرسم">الرسم</option>
+                        <option value="النحت">النحت</option>
+                        <option value="عزف الموسيقي">عزف الموسيقي</option>
+                        <option value="التلحين">التلحين</option>
+                        <option value="المونتاج">المونتاج</option>
+                        <option value="الدوبلاج">الدوبلاج</option>
+                        <option value="ميكب ارتست">ميكب ارتست</option>
+                        <option value="جرافيك ديزاينر">جرافيك ديزاين</option>
+                        <option value="الزجل">الزجل</option>
+                        <option value="اعمال يدوية">اعمال يدوية</option>
+                        <option value="الإخراج">الإخراج</option>
+                    </select>
+
+                    <select name="ra2s" id="ra2s">
+                        <option value="" disabled selected hidden>نوع الرقص</option>
+                        <option value="باليه">باليه</option>
+                        <option value="شرقي">شرقي</option>
+                        <option value="فنون شعبية">فنون شعبية</option>
+                    </select>
+
+                    <select name="ta2lef" id="ta2lef">
+                        <option value="" disabled selected hidden>نوع التأليف</option>
+                        <option value="تأليف قصص قصيرة">تأليف قصص قصيرة</option>
+                        <option value="تأليف روايات">تأليف روايات</option>
+                        <option value="تأليف شعر">تأليف شعر</option>
+                        <option value="تأليف اغاني">تأليف اغاني</option></option>
+                    </select>
+
+                    <select name="Secondary-Talent" id="Stalent">
+                        <option value="" disabled selected hidden>Choose your secondary talent</option>
+                        <option value="التمثيل">التمثيل</option>
+                        <option value="الغناء">الغناء</option>
+                        <option value="الرقص">الرقص</option>
+                        <option value="التأليف">التأليف</option>
+                        <option value="القاء الشعر">القاء الشعر</option>
+                        <option value="التصوير">التصوير</option>
+                        <option value="الرسم">الرسم</option>
+                        <option value="النحت">النحت</option>
+                        <option value="عزف الموسيقي">عزف الموسيقي</option>
+                        <option value="التلحين">التلحين</option>
+                        <option value="المونتاج">المونتاج</option>
+                        <option value="الدوبلاج">الدوبلاج</option>
+                        <option value="ميكب ارتست">ميكب ارتست</option>
+                        <option value="جرافيك ديزاينر">جرافيك ديزاين</option>
+                        <option value="الزجل">الزجل</option>
+                        <option value="اعمال يدوية">اعمال يدوية</option>
+                        <option value="الإخراج">الإخراج</option>
+                    </select>
+
+                    <input type="submit" value="Join-US" id="join-us">
+                    
+                </div>
+            </div>
+        </form>
+
+        <script>
+            var form = document.getElementById("sheetdb-form");
+            form.addEventListener("submit", e => {
+            e.preventDefault();
+            fetch(form.action, {
+                method : "POST",
+                body: new FormData(document.getElementById("sheetdb-form")),
+            }).then(
+                response => response.json()
+            ).then((html) => {
+            });
+            });
+        </script>
+    </div>
+</body>
+    <script src="script.js"></script>
+</html>
