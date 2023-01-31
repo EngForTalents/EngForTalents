@@ -5,14 +5,15 @@ let userName = document.getElementById('username');
 let email = document.getElementById('email');
 let number = document.getElementById('number');
 let fb = document.getElementById('fb');
-let talent = document.getElementById('Ptalent');
+let Ptalent = document.getElementById('Ptalent');
+let Stalent = document.getElementById('Stalent');
 let submit = document.getElementById('join-us');
 
 // form validation 
 
 function validation() {
 
-    if ( fullName.value == '' || userName.value == '' || email.value == '' || number.value == '' || fb.value == '' || talent.value == '' ) {
+    if ( fullName.value == '' || userName.value == '' || email.value == '' || number.value == '' || fb.value == '' || Ptalent.value == '' || Stalent.value == '' ) {
         swal.fire({
             text: "املي باقي الفورم يلا",
             icon: "warning"
@@ -39,17 +40,19 @@ function validation() {
         email.value = '';
         fb.value = '';
         number.value = '';
-        talent.value = '';
+        Ptalent.value = '';
+        Stalent.value = '';
     }
 }
 
 function clearData() {
     userName.value = '';
-    talent.value = '';
     email.value = '';
+    Ptalent.value = '';
+    Stalent.value = '';
 }
 
-talent.onchange = function () {
+Ptalent.onchange = function () {
 
     if (this[this.selectedIndex].value === "الرقص") {
         document.getElementById("ra2s").className = "show";
@@ -63,14 +66,34 @@ talent.onchange = function () {
       document.getElementById("ta2lef").className = "";
     }
 
-    if (talent.value) {
+    if (!this[this.selectedIndex].value === "الرقص" || !this[this.selectedIndex].value === "الإخراج") {
+        document.getElementById('role').className = "show";
+    } else {
+        document.getElementById('role').className = "";
+    }
+
+    if (Ptalent.value) {
         document.getElementById('Stalent').className = 'show';
+    }
+};
+
+Stalent.onchange = function () {
+
+    if (this[this.selectedIndex].value === "الرقص") {
+        document.getElementById("ra2s1").className = "show";
+    } else {
+        document.getElementById("ra2s1").className = "";
+    }
+  
+    if (this[this.selectedIndex].value === "التأليف") {
+      document.getElementById("ta2lef1").className = "show";
+    } else {
+      document.getElementById("ta2lef1").className = "";
     }
 };
 
 document.getElementById('join-us').addEventListener('click', function() {
     validation();
-    userTalent();
     clearData();
 });
 
