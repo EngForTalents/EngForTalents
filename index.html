@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="html">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,6 +7,7 @@
     <script src="sweetalert2.min.js"></script>
     <link rel="stylesheet" href="sweetalert2.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="logo.png">
     <title>EngForTalent</title>
 </head>
 
@@ -21,18 +22,27 @@
             </div>
         </div>
 
-        <form action="https://sheetdb.io/api/v1/dyuk3fqi1jn0e" method="POST" id="sheetdb-form">
+        <form action="https://sheetdb.io/api/v1/hd4v1ilep4td1" method="post" id="sheetdb-form">
             <h1 class="title">
                 u're Talent
             </h1>
             <div class="content">
                 <div class="personal"></div>
 
-                    <input type="text" name="FullName" id="fullname" placeholder="FullName" >
-                    <input type="text" name="UserName" id="username" placeholder="UserName" >
-                    <input type="email" name="EmailAddress" id="email" placeholder="Email Address" >
-                    <input type="text" name="WhatsAppNumber" id="number" placeholder="WhatsApp Number" >
-                    <input type="url" name="FacebookAccount" id="fb" placeholder="Facebook Account URL" >
+                    <input type="text" name="FullName" id="fullname" placeholder="FullName">
+                    <input type="text" name="UserName" id="username" placeholder="UserName">
+                    <input type="email" name="EmailAddress" id="email" placeholder="Email Address">
+                    <input type="text" name="WhatsAppNumber" id="number" placeholder="WhatsApp Number">
+                    <input type="url" name="FacebookAccount" id="fb" placeholder="Facebook Account URL">
+
+                    <select name="Group" id="group" class="show">
+                        <option value="" disabled selected hidden>الفرقة</option>
+                        <option value="اعدادي">اعدادي</option>
+                        <option value="اولي">اولي</option>
+                        <option value="تانية">تانية</option>
+                        <option value="تالتة">تالتة</option>
+                        <option value="رابعة">رابعة</option>
+                    </select>
 
                     <select id="Ptalent" name="Primary-Talent" class="show">
                         <option value="" disabled selected hidden>Choose your primary talent</option>
@@ -55,14 +65,14 @@
                         <option value="الإخراج">الإخراج</option>
                     </select>
 
-                    <select name="ra2s" id="ra2s">
+                    <select name="Primary-Talent" id="ra2s">
                         <option value="" disabled selected hidden>نوع الرقص</option>
-                        <option value="باليه">باليه</option>
-                        <option value="شرقي">شرقي</option>
-                        <option value="فنون شعبية">فنون شعبية</option>
+                        <option value="رقص باليه">باليه</option>
+                        <option value="رقص شرقي">شرقي</option>
+                        <option value="رقص فنون شعبية">فنون شعبية</option>
                     </select>
 
-                    <select name="ta2lef" id="ta2lef">
+                    <select name="Primary-Talent" id="ta2lef">
                         <option value="" disabled selected hidden>نوع التأليف</option>
                         <option value="تأليف قصص قصيرة">تأليف قصص قصيرة</option>
                         <option value="تأليف روايات">تأليف روايات</option>
@@ -70,10 +80,11 @@
                         <option value="تأليف اغاني">تأليف اغاني</option>
                     </select>
                     
-                    <div class="role" id="role">
-                        <input type="checkbox" name="role" vlaue="متمرس">
-                        <input type="checkbox" name="role" vlaue="عايز اتعلم">
-                    </div>
+                    <select name="role-1" id="role1">
+                        <option value="" disabled selected hidden>درجة الموهبه</option>
+                        <option value="متمرس">متمرس</option>
+                        <option value="عايز اتعلم">عايز اتعلم</option>
+                    </select>
                     
                     <select name="Secondary-Talent" id="Stalent">
                         <option value="" disabled selected hidden>Choose your secondary talent</option>
@@ -90,20 +101,20 @@
                         <option value="المونتاج">المونتاج</option>
                         <option value="الدوبلاج">الدوبلاج</option>
                         <option value="ميكب ارتست">ميكب ارتست</option>
-                        <option value="جرافيك ديزاينر">جرافيك ديزاين</option>
+                        <option value="جرافيك ديزاين">جرافيك ديزاين</option>
                         <option value="الزجل">الزجل</option>
                         <option value="اعمال يدوية">اعمال يدوية</option>
                         <option value="الإخراج">الإخراج</option>
                     </select>
 
-                    <select name="ra2s1" id="ra2s1">
+                    <select name="Secondary-Talent" id="ra2s1">
                         <option value="" disabled selected hidden>نوع الرقص</option>
-                        <option value="باليه">باليه</option>
-                        <option value="شرقي">شرقي</option>
-                        <option value="فنون شعبية">فنون شعبية</option>
+                        <option value="رقص باليه">باليه</option>
+                        <option value="رقص شرقي">شرقي</option>
+                        <option value="رقص فنون شعبية">فنون شعبية</option>
                     </select>
 
-                    <select name="ta2lef1" id="ta2lef1">
+                    <select name="Secondary-Talent" id="ta2lef1">
                         <option value="" disabled selected hidden>نوع التأليف</option>
                         <option value="تأليف قصص قصيرة">تأليف قصص قصيرة</option>
                         <option value="تأليف روايات">تأليف روايات</option>
@@ -111,26 +122,27 @@
                         <option value="تأليف اغاني">تأليف اغاني</option>
                     </select>
 
+                    <select name="role-2" id="role2">
+                        <option value="" disabled selected hidden>درجة الموهبه</option>
+                        <option value="متمرس">متمرس</option>
+                        <option value="عايز اتعلم">عايز اتعلم</option>
+                    </select>
+
                     <input type="submit" value="Join-US" id="join-us">
+
+                    <div class="creator">
+                        <h5>Developed by Marwan Hassaan</h5>
+                        <h5>0xmarWan7A - @2023</h5>
+                    </div>
                     
                 </div>
             </div>
         </form>
 
-        <script>
-            var form = document.getElementById("sheetdb-form");
-            form.addEventListener("submit", e => {
-            e.preventDefault();
-            fetch(form.action, {
-                method : "POST",
-                body: new FormData(document.getElementById("sheetdb-form")),
-            }).then(
-                response => response.json()
-            ).then((html) => {
-            });
-            });
-        </script>
     </div>
+
 </body>
+
     <script src="script.js"></script>
+
 </html>

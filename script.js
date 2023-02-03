@@ -5,6 +5,7 @@ let userName = document.getElementById('username');
 let email = document.getElementById('email');
 let number = document.getElementById('number');
 let fb = document.getElementById('fb');
+let group = document.getElementById('group');
 let Ptalent = document.getElementById('Ptalent');
 let Stalent = document.getElementById('Stalent');
 let submit = document.getElementById('join-us');
@@ -13,44 +14,54 @@ let submit = document.getElementById('join-us');
 
 function validation() {
 
-    if ( fullName.value == '' || userName.value == '' || email.value == '' || number.value == '' || fb.value == '' || Ptalent.value == '' || Stalent.value == '' ) {
+    var form = document.getElementById("sheetdb-form");
+    function handleForm(event) { event.preventDefault(); } 
+    form.addEventListener('submit', handleForm);
+
+    if ( fullName.value == '' || userName.value == '' || email.value == '' || number.value == '' || fb.value == '' || Ptalent.value == '' || Stalent.value == '' || group.value == '' ) {
         swal.fire({
-            text: "املي باقي الفورم يلا",
-            icon: "warning"
+            title: "دخل كل بيانات الفورم",
+            icon: "error",
+            confirmButtonColor: "red"
         });
+
     } else if ( isNaN(number.value) ) {
         swal.fire({
             text: "Please Enter your whatsApp number",
             icon: "warning"
         });
         number.value = '';
+        
     } else if (number.value.length < 11) {
         swal.fire({
             text: "whatsApp number must be 11 numbers",
             icon: "warning"
         });
         number.value = '';
+
     } else {
-        swal.fire({
-            text: "برفكتو",
-            icon: "success"
+
+        var form = document.getElementById("sheetdb-form");
+        form.addEventListener("submit", e => {
+        e.preventDefault();
+        fetch(form.action, {
+            method : "POST",
+            body: new FormData(document.getElementById("sheetdb-form")),
+        }).then(
+            response => response.json()
+        ).then((html) => {
+            swal.fire({
+                title: "برفكتو",
+                icon: "success",
+                confirmButtonColor: "green"
+            }).then ( function() {
+                location.reload();
+            });
         });
-        userName.value = '';
-        fullName.value = '';
-        email.value = '';
-        fb.value = '';
-        number.value = '';
-        Ptalent.value = '';
-        Stalent.value = '';
+        });
     }
 }
 
-function clearData() {
-    userName.value = '';
-    email.value = '';
-    Ptalent.value = '';
-    Stalent.value = '';
-}
 
 Ptalent.onchange = function () {
 
@@ -66,10 +77,10 @@ Ptalent.onchange = function () {
       document.getElementById("ta2lef").className = "";
     }
 
-    if (!this[this.selectedIndex].value === "الرقص" || !this[this.selectedIndex].value === "الإخراج") {
-        document.getElementById('role').className = "show";
+    if (this[this.selectedIndex].value === "الرقص" || this[this.selectedIndex].value === "الإخراج") {
+        document.getElementById('role1').className = "";
     } else {
-        document.getElementById('role').className = "";
+        document.getElementById('role1').className = "show";
     }
 
     if (Ptalent.value) {
@@ -90,11 +101,16 @@ Stalent.onchange = function () {
     } else {
       document.getElementById("ta2lef1").className = "";
     }
+
+    if (this[this.selectedIndex].value === "الرقص" || this[this.selectedIndex].value === "الإخراج") {
+        document.getElementById('role2').className = "";
+    } else {
+        document.getElementById('role2').className = "show";
+    }
 };
 
 document.getElementById('join-us').addEventListener('click', function() {
     validation();
-    clearData();
 });
 
 

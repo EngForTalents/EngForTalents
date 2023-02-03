@@ -1,5 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+/* width */
+::-webkit-scrollbar {
+    width: 13px;
+}
+
+  /* Track */
+::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+
+  /* Handle */
+::-webkit-scrollbar-thumb {
+    background: #790303;
+}
+
+  /* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #df1515;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -102,21 +122,23 @@ input#join-us:hover {
     transform: scale(1);
 }
 
+.creator {
+    margin-top: 20px;
+}
+
+.creator h5 {
+    color: #fff;
+    font-size: 12px;
+    font-weight: 500px;
+    text-align: center;
+}
+
 select {
     display: none;
 }
 
 select.show {
     display: block;
-}
-
-.role.show {
-    display: flex;
-    flex-direction: row;
-}
-
-.role {
-    display: none;
 }
 
 
@@ -146,8 +168,18 @@ and (min-width : 721px)
 and (max-width : 1024px) 
 and (max-height : 1280px) {
 
+    .container {
+        flex-direction: column;
+        justify-content: center;
+    }
+
     form { 
         width: 80%;
         margin-left: 80px;
+    }
+
+    .logo img {
+        width: 280px;
+        margin-left: 10px;
     }
 }
