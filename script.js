@@ -20,22 +20,22 @@ function validation() {
 
     if ( fullName.value == '' || userName.value == '' || email.value == '' || number.value == '' || fb.value == '' || Ptalent.value == '' || Stalent.value == '' || group.value == '' ) {
         swal.fire({
-            title: "دخل كل بيانات الفورم",
-            icon: "error",
+            title: "كمل بيانات الفورم يلا",
+            html: "<img src='b.png' style='width: 100px;'>",
             confirmButtonColor: "red"
         });
 
     } else if ( isNaN(number.value) ) {
         swal.fire({
-            text: "Please Enter your whatsApp number",
-            icon: "warning"
+            title: "اكتب رقم الواتساب",
+            html: "<img src='w.png' style='width: 100px;'>",
         });
         number.value = '';
         
     } else if (number.value.length < 11) {
         swal.fire({
-            text: "whatsApp number must be 11 numbers",
-            icon: "warning"
+            title: "معلومه ليك رقم التلفون 11 رقم",
+            html: "<img src='c.png' style='width: 200px;'>",
         });
         number.value = '';
 
@@ -52,7 +52,7 @@ function validation() {
         ).then((html) => {
             swal.fire({
                 title: "برفكتو",
-                icon: "success",
+                html: "<img src='p1.png' style='width: 100px;'>",
                 confirmButtonColor: "green"
             }).then ( function() {
                 location.reload();
@@ -61,7 +61,6 @@ function validation() {
         });
     }
 }
-
 
 Ptalent.onchange = function () {
 
