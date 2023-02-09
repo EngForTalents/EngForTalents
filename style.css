@@ -29,9 +29,9 @@
 }
 
 body {
-    background: url(6.jpg) no-repeat;
+    background: url(banner2.jpg) no-repeat;
     background-size: cover;
-    background-position: top;
+    /* background-position: top; */
     overflow-x: hidden;
 }
 
@@ -41,6 +41,19 @@ body {
     align-items: center;
     justify-content: space-between;
     width: 100%;
+    position: relative;
+}
+
+.su .copyright img {
+    width: 250px;
+    position: absolute;
+    top: 2%;
+    padding: 20px;
+    margin-left: 10px;
+}
+
+.su .copyright-mob {
+    display: none;
 }
 
 .logo {
@@ -55,19 +68,13 @@ body {
     margin-left: 50px;
 }
 
-
-.logo h2,h4 {
-    color: #EEE;
-    font-style: bold;
-    letter-spacing: 1px;
-}
-
-.logo h2 {
-    font-size: 25px;
-}
-
-.logo h4 {
-    font-size: 20px;
+.su .hashtag h5 {
+    position: absolute;
+    top: 95%;
+    margin-left: 10px;
+    text-align: left;
+    color: #888;
+    font-size: 13px;
 }
 
 form {
@@ -114,11 +121,11 @@ input:hover {
 }
 
 input#join-us {
-    background-color: #790303;
+    background-color: #6E0034;
 }
 
 input#join-us:hover {
-    background-color: #df1515;
+    background-color: #ea0972;
     transform: scale(1);
 }
 
@@ -157,9 +164,24 @@ and (max-height : 1280px) {
         margin-left: 40px;
     }
 
+    .su .copyright {
+        display: none;
+    }
+
+    .su .copyright-mob {
+        display: flex;
+    }
+
+    .su .copyright-mob img {
+        width: 150px;
+    }
+
     .logo img {
-        width: 300px;
-        margin-left: 10px;
+        display: none;
+    }
+
+    .su .hashtag h5 {
+        display: none;
     }
 }
 
@@ -178,8 +200,26 @@ and (max-height : 1280px) {
         margin-left: 80px;
     }
 
+    .su .copyright {
+        display: none;
+    }
+
+    .su .copyright-mob {
+        display: flex;
+    }
+
+    .su .copyright-mob img {
+        width: 150px;
+    }
+
     .logo img {
-        width: 280px;
-        margin-left: 10px;
+        display: none;
+    }
+
+    .su .hashtag h5 {
+        text-align: center;
+        left: 50%;
+        transform: translateX(-50%);
+        color: #EEE;
     }
 }

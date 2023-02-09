@@ -1,7 +1,6 @@
 // set global variables
 
 let fullName = document.getElementById('fullname');
-let userName = document.getElementById('username');
 let email = document.getElementById('email');
 let number = document.getElementById('number');
 let fb = document.getElementById('fb');
@@ -18,7 +17,7 @@ function validation() {
     function handleForm(event) { event.preventDefault(); } 
     form.addEventListener('submit', handleForm);
 
-    if ( fullName.value == '' || userName.value == '' || email.value == '' || number.value == '' || fb.value == '' || Ptalent.value == '' || Stalent.value == '' || group.value == '' ) {
+    if ( fullName.value == '' || email.value == '' || number.value == '' || fb.value == '' || Ptalent.value == '' || Stalent.value == '' || group.value == '' ) {
         swal.fire({
             title: "كمل بيانات الفورم يلا",
             html: "<img src='b.png' style='width: 100px;'>",
